@@ -1,1 +1,1 @@
-Yoked: Textmess Your Friends!
+Yoked: TextMess Your Friends!
