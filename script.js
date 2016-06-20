@@ -15,6 +15,7 @@ app.controller("HomeCtrl", function($scope, $http, $route) {
 
 
 app.controller("MessageCtrl", function($scope, $http, $route) {
+  
   //Message page angular here
 	});
 
@@ -36,3 +37,4 @@ app.controller("MessageCtrl", function($scope, $http, $route) {
 //   // click on `index.html` above to see it used in the DOM!
 //   syncObject.$bindTo($scope, "data");
 // });
+
