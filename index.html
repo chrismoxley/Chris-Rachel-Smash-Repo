@@ -7,7 +7,18 @@
   <link rel="stylesheet" href="./style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-  <!-- <script src="./data.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.0/angularfire.min.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAWTxWhi_0jaJbjhdusUzOdq8HH9znBzMc",
+      authDomain: "project-4609622593164386488.firebaseapp.com",
+      databaseURL: "https://project-4609622593164386488.firebaseio.com",
+      storageBucket: "project-4609622593164386488.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="./script.js"></script>
 </head>
 <body ng-app="yokeApp">
