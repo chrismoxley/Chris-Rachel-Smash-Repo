@@ -1,0 +1,22 @@
+body {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+.wrapper {
+  padding: 20px;
+  background-color: #fafafa;
+  border: 1pt solid #ddd;
+}
+
+.prop {
+  padding: 20px 0;
+}
+
+.error {
+  color: red;
+}
+
+.message {
+  color: green;
+}

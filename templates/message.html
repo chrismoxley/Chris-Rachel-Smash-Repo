@@ -1,0 +1,9 @@
+<!-- Yoked by 'friendname', Button to start challenge, message field hidden until challenge complete  -->
+<a href="#/">Home</a>
+<div ng-controller="MessageCtrl">
+<!-- create a counter variable onclick then clickout = clickcount + 1 when clickout =>100 then the ng-show variable becomes true and then the message appears!!!! create a hidden message in this div and then above it create a div that outlines said challenge -->
+    <button ng-show="success" ng-click="counter()">Click this 100 times to reveal your message!</button>
+    <br>
+    <div ng-show="success" ng-model="clickCount">Your click count is {{clickCount}}</div>
+    <div ng-hide="success" class="alert alert-warning" role="alert">lmao you've been yoked!!!!!!</div>
+</div>
