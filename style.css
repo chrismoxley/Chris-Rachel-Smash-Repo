@@ -1,7 +1,12 @@
 body {
 	text-align: center;
+	font-family: HanziPen SC;
 	padding: 0px;
 	margin: 0px;
+	background-image: url("http://41.media.tumblr.com/10b108cbf6a23d169052c305a84d6ea2/tumblr_nhg3iuXYiv1sbq861o3_1280.jpg");
+}
+h1 {
+	font-size: 100px;
 }
 .wrapper {
   padding: 20px;
@@ -19,4 +24,10 @@ body {
 
 .message {
   color: green;
+}
+.login {
+
+}
+.loginButt {
+	background-color: RoyalBlue;
 }
