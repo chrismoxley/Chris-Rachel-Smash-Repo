@@ -24,7 +24,10 @@ h1 {
 }
 
 .message {
-  color: green;
+  color: black;
+  font-size: 20px;
+  background-color: white;
+
 }
 .login {
 
@@ -34,11 +37,22 @@ h1 {
 }
 .dropdown {
 	float: center;
-<<<<<<< HEAD
 }
 button {
 	padding: 5px;
 	font-size: 25px;
-=======
->>>>>>> master
 }
+a {
+	font-size: 30px;
+	background-color: white;
+	border: 1pt black solid;
+	margin-bottom: 5px;
+}
+/*.list {
+	width: 30%
+
+}
+.align {
+	margin: auto;
+	text-align: center;
+}*/

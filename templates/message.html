@@ -2,18 +2,15 @@
 <h2>MESSAGE</h2>
 <div class="message">
 	<a href="#/">Home</a>
-	<div ng-controller="MessageCtrl">
-		<!-- create a counter variable onclick then clickout = clickcount + 1 when clickout =>100 then the ng-show variable becomes true and then the message appears!!!! create a hidden message in this div and then above it create a div that outlines said challenge -->
-		<!-- <div ng-show:"timer">
-			<input type="text" ng-model="myText">
-  			<p>You typed: {{myText}}</p>
-	  		 create a timer that counts down "5-4-3-2-1-0" and if the person types "Bouta get yoked!!!"  before the countdown reaches 0, then their message will reveal. We will do this by creaing an ng-show div and in that div in the javascript will be a variable that only becomes true when the user types the message in under 5 seconds
-	  	</div> -->
-		<button ng-show="success" ng-click="counter()">Click this 100 times to reveal your message!</button>
-		<br>
-		<div ng-show="success" ng-model="clickCount">Your click count is {{clickCount}}</div>
-		<div ng-hide="success" class="alert alert-warning" role="alert">lmao you've been yoked!!!!!!</div>
+	<br>
+	<button ng-show="success" ng-click="counter()">Click this 100 times to reveal your message!</button>
+	<br>
+	<div ng-show="success" ng-model="clickCount">Your click count is {{clickCount}}</div>
+	<div class="align">
+		<ol class="list" ng-hide="success">
+		<li ng-repeat="item in mine track by $index">{{item}}</li>
 	</div>
+	</ol>
 </div>
 
 
