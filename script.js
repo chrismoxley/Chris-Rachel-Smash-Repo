@@ -14,7 +14,7 @@ app.config(function($routeProvider) {
 });
 
 app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebaseArray, $firebaseObject, $timeout) {
-  
+
   var auth = $firebaseAuth();
   var ref = firebase.database().ref();
   auth.$onAuthStateChanged(function(firebaseUser) {
@@ -43,6 +43,7 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebase
 
 });
 
+
 app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth) {
   //home page angular here
   var auth = $firebaseAuth();
@@ -51,7 +52,7 @@ app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth) {
       $scope.firebaseUser = firebaseUser;
       
     } else {
-      
+
       $location.path("/login");
     }
   });
@@ -65,12 +66,13 @@ app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth) {
 
 app.controller("MessageCtrl", function($scope, $http, $route) {
  //Message page angular here
-    $scope.success = true; 
+ $scope.success = true; 
  $scope.clickCount = 0;
  $scope.counter = function () {
    $scope.clickCount = $scope.clickCount + 1;
- if ($scope.clickCount >= 100) {
-  $scope.success = false;
- }
- }
+   if ($scope.clickCount >= 5) {
+    $scope.success = false;
+  }
+}
+$scope.timer = true;
 });
