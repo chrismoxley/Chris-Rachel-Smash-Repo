@@ -26,7 +26,7 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebase
         user.$save();
       });
 
-      ref.child("users").child(uid).child(messages);
+      // ref.child("users").child(uid).child(messages);
 
       
 
@@ -82,7 +82,7 @@ app.controller("MessageCtrl", function($scope, $http, $route) {
  $scope.clickCount = 0;
  $scope.counter = function () {
    $scope.clickCount = $scope.clickCount + 1;
- if ($scope.clickCount >= 100) {
+ if ($scope.clickCount >= 5) {
   $scope.success = false;
  }
  }
