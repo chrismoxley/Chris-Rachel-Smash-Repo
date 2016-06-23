@@ -34,8 +34,11 @@ h1 {
 }
 .dropdown {
 	float: center;
+<<<<<<< HEAD
 }
 button {
 	padding: 5px;
 	font-size: 25px;
+=======
+>>>>>>> master
 }

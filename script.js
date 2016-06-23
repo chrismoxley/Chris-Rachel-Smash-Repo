@@ -45,7 +45,6 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebase
   }
 
 });
-
 app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth, $firebaseArray, $firebaseObject) {
   //home page angular here
   var auth = $firebaseAuth();
@@ -89,7 +88,7 @@ app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth, $fi
 
 app.controller("MessageCtrl", function($scope, $http, $route) {
  //Message page angular here
-    $scope.success = true; 
+ $scope.success = true; 
  $scope.clickCount = 0;
  $scope.counter = function () {
    $scope.clickCount = $scope.clickCount + 1;
