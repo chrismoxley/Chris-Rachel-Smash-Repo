@@ -31,3 +31,6 @@ h1 {
 .loginButt {
 	background-color: RoyalBlue;
 }
+.dropdown {
+	float: center;
+}
