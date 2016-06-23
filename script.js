@@ -14,17 +14,24 @@ app.config(function($routeProvider) {
 });
 
 app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebaseArray, $firebaseObject, $timeout) {
-  
   var auth = $firebaseAuth();
   var ref = firebase.database().ref();
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
-      var users = $firebaseObject(ref.child("users"));
-      users[firebaseUser.uid] = {
-        uid: firebaseUser.uid,
-        name: firebaseUser.displayName
-      }
-      users.$save();
+      var user = $firebaseObject(ref.child("users").child(firebaseUser.uid));
+      user.$loaded().then(function() {
+        console.log("did things");
+        user.uid = firebaseUser.uid;
+        user.name = firebaseUser.displayName;
+        user.$save();
+      });
+
+      ref.child("users").child(uid).child(messages);
+
+      
+
+      
+      
       $scope.firebaseUser = firebaseUser;
       $location.path("/");
 
@@ -43,9 +50,10 @@ app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebase
 
 });
 
-app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth) {
+app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth, $firebaseArray, $firebaseObject) {
   //home page angular here
   var auth = $firebaseAuth();
+
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
       $scope.firebaseUser = firebaseUser;
@@ -55,6 +63,11 @@ app.controller("HomeCtrl", function($scope, $http, $location, $firebaseAuth) {
       $location.path("/login");
     }
   });
+
+  var ref = firebase.database().ref();
+  $scope.users = $firebaseObject(ref.child("users"));
+
+
   $scope.logout = function() {
     auth.$signOut();
     $location.path("/login");
