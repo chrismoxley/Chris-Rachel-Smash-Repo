@@ -14,23 +14,20 @@ app.config(function($routeProvider) {
 });
 
 app.controller("LoginCtrl", function($scope, $location, $firebaseAuth, $firebaseArray, $firebaseObject, $timeout) {
-  console.log(users)
+  
   var auth = $firebaseAuth();
-  var ref = firebase.database().ref().child("users");
-  var users = {};
+  var ref = firebase.database().ref();
   auth.$onAuthStateChanged(function(firebaseUser) {
     if (firebaseUser) {
+      var users = $firebaseObject(ref.child("users"));
+      users[firebaseUser.uid] = {
+        uid: firebaseUser.uid,
+        name: firebaseUser.displayName
+      }
+      users.$save();
       $scope.firebaseUser = firebaseUser;
       $location.path("/");
-        console.log(firebaseUser)
-        console.log(firebaseUser.uid)
-        console.log(firebaseUser.displayName)
-    users = {
-      uid: firebaseUser.uid,
-      name: firebaseUser.displayName
-    }
 
-    console.log(users)
     } else {
       $location.path("/login");
     }
@@ -72,7 +69,7 @@ app.controller("MessageCtrl", function($scope, $http, $route) {
  $scope.clickCount = 0;
  $scope.counter = function () {
    $scope.clickCount = $scope.clickCount + 1;
- if ($scope.clickCount >= 5) {
+ if ($scope.clickCount >= 100) {
   $scope.success = false;
  }
  }

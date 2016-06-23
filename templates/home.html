@@ -1,6 +1,8 @@
 <!-- Top to bottom: Top: Send Message: Text Area, next button, challenge dropdown, friends dropdown, error message ||| Bottom: Split in 2 columns, 1st: Your friends list, add friend at the bottom with an input 2nd: List of your unopened messages -->
+<h2> HOME </h2>
 <a href="#/message">View my messages</a>
 <br>
+  <textarea class="form-control" placeholder="Type your message here" ng-model="newProp.text"></textarea>
 <div ng-controller="HomeCtrl">
-  <button ng-click="logout()">Logout</button> 
+  <button class="logoutbutton" ng-click="logout()">Logout</button> 
 </div>
