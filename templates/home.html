@@ -1,5 +1,38 @@
-<!-- Top to bottom: Top: Send Message: Text Area, next button, challenge dropdown, friends dropdown, error message ||| Bottom: Split in 2 columns, 1st: Your friends list, add friend at the bottom with an input 2nd: List of your unopened messages -->
+<!-- Top to bottom: Top: Send Message: Text Area, next button, challenge dropdown, friends dropdown, error message ||| Bottom: Split in 2 columns, 1st: Your friends list, add friend at the bottom with an input 2nd: List of your unopened messages --> -->
+<h2> HOME </h2>
 <a href="#/message">View my messages</a>
+<br>
+<textarea type="text" class="form-control" ng-model="sentMsg" placeholder="Write your yoke here!">></textarea>
+<div ng-controller="HomeCtrl">
+  <button ng-click="logout()">Logout</button> 
+</div>
+<!-- <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Challenge
+  <span class="caret"></span></button> -->
+  <!-- <ul class="dropdown-menu">
+    <li><a href="#">Timed Type</a></li>
+    <li><a href="#">Button Buzzer</a></li>
+  </ul>
+</div> -->
+<!-- <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Friend
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+  </ul>
+</div> -->
+<select ng-model="sentMsg.receiver" ng-options="friend as friend.name for friend in friends" class="form-control"></select>
+<br>
+<button class="btn btn-info" ng-click="send()">Click to send!</button>
+
+
+
+
+
+
+
+
+<!-- pre rachel merge -->
+<!-- <a href="#/message">View my messages</a>
 <br>
 <div ng-controller="HomeCtrl">
 	<div ng-repeat="user in users">

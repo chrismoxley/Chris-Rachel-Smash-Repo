@@ -7,6 +7,7 @@ body {
 }
 h1 {
 	font-size: 100px;
+	background-color: white;
 }
 .wrapper {
   padding: 20px;
@@ -30,4 +31,11 @@ h1 {
 }
 .loginButt {
 	background-color: RoyalBlue;
+}
+.dropdown {
+	float: center;
+}
+button {
+	padding: 5px;
+	font-size: 25px;
 }
